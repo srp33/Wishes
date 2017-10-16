@@ -18,7 +18,7 @@ gctxFileName=$redirectedTempFolder/LINCS_PhaseI_Level3.gctx
 geneFile=$redirectedTempFolder/GSE92742_Broad_LINCS_gene_info.txt.gz
 
 #Downloaded and Installed in install.sh
-parallelCommand=$softwareFolder/parallel-20170822/src/parallel
+parallelCommand=$softwareFolder/parallel-20170922/src/parallel
 minicondaPath=$softwareFolder/miniconda/bin/
 
 #Will create
