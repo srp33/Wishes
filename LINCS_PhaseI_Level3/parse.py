@@ -33,7 +33,7 @@ with gzip.open(geneFile, 'r') as f :
         geneDict[list[0]] = list[1]
 
 
-print("writing metadata file")
+print("reading source files")
 
 cellHeaderList = []
 cellInfoDict = {}
@@ -75,16 +75,16 @@ instInfoSampleIds = []
 #instInfo.close()
 #intersectionValues = np.intersect1d(instInfoSampleIds,rowgrp["id"])
 #print("it worked")
-
-instInfo =  gzip.open(instInfoFile, 'r')
+print("writing metadata file")
 try:
     headerList = instInfo.readline().strip('\n').split('\t')
     sigId = ""
     metaOut.write("Sample\tVariable\tValue\n")
     for row in instInfo :
         rowList = row.strip('\n').split('\t')
-        try :
-            didItWork = np.where(rowgrp["id"]==rowList[0])
+	if(np.any(rowgrp["id"][:,] ==  rowList[0])) :
+            print("matched")
+#            didItWork = np.where(rowgrp["id"]==rowList[0])
             instInfoSampleIds.append(rowList[0])
             print(rowList[0])        
             for i in range(len(rowList) - 1 ):
@@ -111,7 +111,8 @@ try:
                                 metaOut.write(str(rowList[0]) + '\t' + str(pertMetricsHeaderList[j]) + '\t' + str(pertMetricsIdList[j]) + '\n')
                     except :
                         continue
-        except :
+        else :
+#        except :
             print("metadata lines didn't match")
             continue
 finally:
@@ -132,13 +133,14 @@ try :
     index = 0
     for line in subsubgrpData["matrix"] :
         a = np.asarray(line).astype(str)
-        try :
 #            didItWork = np.where(intersectionValues==rowgrp["id"][index])
-            didItWork = np.where(instInfoSampleIds==rowgrp["id"][index])
+	if(np.any(instInfoSampleIds[:,0] == rowgrp["id"][index])) :
+#        if(np.any(instInfoSampleIds[:,0] == rowgrp["id"][index])) :
+#            didItWork = np.where(instInfoSampleIds==rowgrp["id"][index])
             f.write(rowgrp["id"][index] + '\t' + '\t'.join(a) + '\n')
             index = index + 1
             print(str(index) + " of ")
-        except :
+        else :
             index = index + 1
             print("didn't match " + rowgrp["id"][index])
             continue
