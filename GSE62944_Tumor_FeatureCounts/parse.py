@@ -75,8 +75,8 @@ with open(transposedTumorFeatureCounts, 'r') as iF:
     with open(dataOutFile, 'w') as ofData:
         with open(metadataOutFile, 'w') as ofMeta:
             firstLine = iF.readline().strip('\n').split('\t')
-            ofMeta.write("SampleID\tVariable\tValue\n")
-            ofData.write("SampleID\t" + '\t'.join(firstLine[1:]) + '\n')
+            ofMeta.write("Sample\tVariable\tValue\n")
+            ofData.write("Sample\t" + '\t'.join(firstLine[1:]) + '\n')
             for line in iF:
                 lineList = line.strip('\n').split('\t')
                 ofMeta.write(lineList[0] + "\tCancer_Type\t" + patientIDToCancerDict[lineList[0]] + "\n")
