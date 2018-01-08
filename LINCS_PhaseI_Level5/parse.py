@@ -36,7 +36,7 @@ print("writing expression file")
 
 f = gzip.open(dataOut, 'w')
 try :
-    f.write("")
+    f.write("Sample")
     for value in colgrp["id"] :
         f.write('\t' + geneDict[value])
     f.write('\n')
