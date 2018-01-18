@@ -1,10 +1,11 @@
 SampleID	Variable	Value
 TCGA-02-0047-01A-01R-1849-01	Cancer_Type	GBM
+TCGA-02-0047-01A-01R-1849-01	history_lgg_dx_of_brain_tissue	NO
 TCGA-ZX-AA5X-01A-11R-A42T-07	Cancer_Type	CESC
-TCGA-A5-A0VQ-01A-11R-A104-07	form_completion_date	TCGA-A5-A0VQ
+TCGA-ZX-AA5X-01A-11R-A42T-07	tobacco_smoking_age_started	[Not Available]
+TCGA-A5-A0VQ-01A-11R-A104-07	form_completion_date	2010-11-15
 TCGA-A5-A0VQ-01A-11R-A104-07	lymph_nodes_aortic_pos_total	0
 TCGA-A5-A0VQ-01A-11R-A104-07	Cancer_Type	UCEC
 TCGA-G9-A9S0-01A-11R-A41O-07	form_completion_date	2014-6-17
 TCGA-G9-A9S0-01A-11R-A41O-07	days_to_biochemical_recurrence_first	429
 TCGA-G9-A9S0-01A-11R-A41O-07	Cancer_Type	PRAD
-
