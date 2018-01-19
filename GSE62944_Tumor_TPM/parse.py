@@ -60,8 +60,6 @@ data = readMatrixFromFile(metadata)
 if len(data) > 1 and len(data[0]) == len(data[1]) - 1:
     data[0].insert(0, " ")
 
-#writeMatrixToFile(transposeMatrix(data), transposedMetadata)
-
 metadataDict = {}
 first = True
 for list in transposeMatrix(data) :
