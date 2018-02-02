@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 function downloadData {
 #:FUnction accepts the URL as a parameter
 	url="$1"
