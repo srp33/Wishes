@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Make sure the whole script will fail if any part of it fails
 set -euo pipefail
 
 python3 parse_metadata.py "./brca_metabric/data_clinical_sample.txt" "./brca_metabric/data_clinical_patient.txt" "./brca_metabric/data_CNA.txt" "./brca_metabric/data_mutations_extended.txt" "metadata.tsv.gz"
