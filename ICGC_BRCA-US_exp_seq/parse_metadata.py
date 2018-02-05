@@ -28,7 +28,7 @@ with gzip.open(inFilePath, 'rb') as inFile:
                     column = column.replace("donor_", "")
 
                 value = lineItems[columnIndex]
-
-                outItems = [sample, column, value]
-                outLine = "\t".join(outItems) + "\n"
-                outFile.write(outLine.encode())
+		if value != "":
+                	outItems = [sample, column, value]
+                	outLine = "\t".join(outItems) + "\n"
+               		outFile.write(outLine.encode())
