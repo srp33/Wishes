@@ -1,0 +1,84 @@
+SampleID	Variable	Value
+NCI-H522	Site	lung
+NCI-H522	Histology	carcinoma
+NCI-H522	GDSC Tissue descriptor 1	lung_NSCLC
+NCI-H522	Cancer Type (matching TCGA label)	Lung adenocarcinoma
+NCI-H522	Microsatellite  instability Status (MSI)	Microsatillite class stable (0 of 5 markers show instability)/Microsatillite instability low (1 of 5 markers show instability)
+NCI-H522	Screen Medium	RPMI: RPMI, 10% FBS, % PenStrep, % Glucose, 1mM Sodium Pyruvate
+NCI-H522	Growth Properties	Adherent
+NCI-H522	Drug_Doxil_MAX_CONC_MICROMOLAR	1.024
+NCI-H522	Drug_Doxil_RMSE	0.13644181
+NCI-H522	Drug_Doxorubicine_MAX_CONC_MICROMOLAR	1.024
+NCI-H522	Drug_Doxorubicine_RMSE	0.13644181
+NCI-H522	Drug_Doxorubicin_MAX_CONC_MICROMOLAR	1.024
+NCI-H522	Drug_Doxorubicin_RMSE	0.13644181
+NCI-H522	Drug_Bryostatin_MAX_CONC_MICROMOLAR	0.008
+NCI-H522	Drug_Bryostatin_RMSE	0.10946682
+NCI-H522	Drug_Bryostatin 1_MAX_CONC_MICROMOLAR	0.008
+NCI-H522	Drug_Bryostatin 1_RMSE	0.10946682
+NCI-H522	RACS_Deletion	cnaLUAD14
+NCI-H522	RACS_Deletion	cnaLUAD34 (FAT1,IRF2)
+NCI-H522	Variant_missense	AADACL4
+NCI-H522	Variant_missense	ZP1
+ESS-1	Site	endometrium
+ESS-1	Histology	carcinoma
+ESS-1	GDSC Tissue descriptor 1	urogenital_system
+ESS-1	Microsatellite  instability Status (MSI)	Microsatillite class stable (0 of 5 markers show instability)/Microsatillite instability low (1 of 5 markers show instability)
+ESS-1	Screen Medium	RPMI: RPMI, 10% FBS, % PenStrep, % Glucose, 1mM Sodium Pyruvate
+ESS-1	Growth Properties	Adherent
+ESS-1	Drug_Doxil_MAX_CONC_MICROMOLAR	1.024
+ESS-1	Drug_Doxil_RMSE	0.07144754
+ESS-1	Drug_Doxorubicine_MAX_CONC_MICROMOLAR	1.024
+ESS-1	Drug_Doxorubicine_RMSE	0.07144754
+ESS-1	Drug_Doxorubicin_MAX_CONC_MICROMOLAR	1.024
+ESS-1	Drug_Doxorubicin_RMSE	0.07144754
+ESS-1	Drug_SB-216763_MAX_CONC_MICROMOLAR	10.0
+ESS-1	Drug_SB-216763_RMSE	0.02381139
+ESS-1	Drug_SB 216763_MAX_CONC_MICROMOLAR	10.0
+ESS-1	Drug_SB 216763_RMSE	0.02381139
+ESS-1	Drug_SB216763_MAX_CONC_MICROMOLAR	10.0
+ESS-1	Drug_SB216763_RMSE	0.02381139
+ESS-1	Variant_missense	A2ML1
+ESS-1	Variant_missense	ZZEF1
+CAL-120	Site	breast
+CAL-120	Histology	carcinoma
+CAL-120	GDSC Tissue descriptor 1	breast
+CAL-120	Cancer Type (matching TCGA label)	Breast invasive carcinoma
+CAL-120	Microsatellite  instability Status (MSI)	Microsatillite class stable (0 of 5 markers show instability)/Microsatillite instability low (1 of 5 markers show instability)
+CAL-120	Screen Medium	DMEM/F12: DMEM/F12, 10% FBS, 1% PenStrep
+CAL-120	Growth Properties	Adherent
+CAL-120	Drug_Doxorubicin_MAX_CONC_MICROMOLAR	1.024
+CAL-120	Drug_Doxorubicin_RMSE	0.03204478
+CAL-120	Drug_Doxil_MAX_CONC_MICROMOLAR	1.024
+CAL-120	Drug_Doxil_RMSE	0.03204478
+CAL-120	Drug_Doxorubicine_MAX_CONC_MICROMOLAR	1.024
+CAL-120	Drug_Doxorubicine_RMSE	0.03204478
+CAL-120	Drug_Pevonedistat_MAX_CONC_MICROMOLAR	1.0
+CAL-120	Drug_Pevonedistat_RMSE	0.05728674
+CAL-120	Drug_MLN4924_MAX_CONC_MICROMOLAR	1.0
+CAL-120	Drug_MLN4924_RMSE	0.05728674
+CAL-120	Drug_MLN-4924_MAX_CONC_MICROMOLAR	1.0
+CAL-120	Drug_MLN-4924_RMSE	0.05728674
+CAL-120	RACS_Amplification	cnaBRCA10 (MDM2,NUP107)
+CAL-120	RACS_Deletion	cnaBRCA22 (SYNCRIP,ZNF292)
+CAL-120	Variant_missense	ACTL8
+CAL-120	Variant_missense	ZNF628
+SK-MEL-28	Site	skin
+SK-MEL-28	Histology	malignant_melanoma
+SK-MEL-28	GDSC Tissue descriptor 1	skin
+SK-MEL-28	Cancer Type (matching TCGA label)	Skin Cutaneous Melanoma
+SK-MEL-28	Microsatellite  instability Status (MSI)	Microsatillite class stable (0 of 5 markers show instability)/Microsatillite instability low (1 of 5 markers show instability)
+SK-MEL-28	Screen Medium	DMEM/F12: DMEM/F12, 10% FBS, 1% PenStrep
+SK-MEL-28	Growth Properties	Adherent
+SK-MEL-28	Drug_Doxil_MAX_CONC_MICROMOLAR	1.024
+SK-MEL-28	Drug_Doxil_RMSE	0.12082764
+SK-MEL-28	Drug_Doxorubicine_MAX_CONC_MICROMOLAR	1.024
+SK-MEL-28	Drug_Doxorubicine_RMSE	0.12082764
+SK-MEL-28	Drug_Doxorubicin_MAX_CONC_MICROMOLAR	1.024
+SK-MEL-28	Drug_Doxorubicin_RMSE	0.12082764
+SK-MEL-28	Drug_NPK76-II-72-1_MAX_CONC_MICROMOLAR	10.24
+SK-MEL-28	Drug_NPK76-II-72-1_RMSE	0.04253059
+SK-MEL-28	RACS_Deletion	cnaSKCM4 (BNC2,CDKN2A,JAK2,PSIP1)
+SK-MEL-28	RACS_Amplification	cnaSKCM21 (FOXP1,MITF)
+SK-MEL-28	Variant_missense	A2M
+SK-MEL-28	Variant_missense	ZSCAN21
