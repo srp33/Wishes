@@ -30,9 +30,5 @@ rm -f $metadataOutFile
 rm -f $dataOutFile
 
 #miniconda is used to store panda software in environments need to activate environment
-echo "Setting up environment"
-cd $minicondaPath
-source activate lincs_env
-cd ../../..
 
 python parse.py $instInfoFileName $gctxFileName $metadataOutFile $dataOutFile $geneFile $cellInfo $pertInfo $pertMetrics 
