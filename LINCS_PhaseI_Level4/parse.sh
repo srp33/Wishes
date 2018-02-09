@@ -30,5 +30,5 @@ rm -f $metadataOutFile
 rm -f $dataOutFile
 
 #miniconda is used to store panda software in environments need to activate environment
-
+source activate WishBuilderDependencies
 python parse.py $instInfoFileName $gctxFileName $metadataOutFile $dataOutFile $geneFile $cellInfo $pertInfo $pertMetrics 
