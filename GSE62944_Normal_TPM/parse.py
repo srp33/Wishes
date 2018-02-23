@@ -1,9 +1,11 @@
 import sys, gzip
+import numpy as np
 
 PatientCancerType = sys.argv[1]
 NormalTPM = sys.argv[2]
 dataOutFile = sys.argv[3]
 metadataOutFile = sys.argv[4]
+print(metadataOutFile)
 namesToAbbreviations = sys.argv[5]
 
 ## Read the namesToAbbreviation
@@ -18,7 +20,7 @@ with open(namesToAbbreviations, 'r') as f:
 patientIDToCancerDict = {}
 with gzip.open(PatientCancerType, 'r') as f:
     for line in f:
-        lineList= line.encode().strip('\n').split('\t')
+        lineList= line.decode().strip('\n').split('\t')
         patientIDToCancerDict[lineList[0]] = lineList[1]
 
 with gzip.open(NormalTPM, 'r') as iF:
