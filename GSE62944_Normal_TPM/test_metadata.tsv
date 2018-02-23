@@ -1,9 +1,9 @@
 SampleID	Variable	Value
-TCGA-K4-A3WV-11A-21R-A22U-07	Cancer_Type	BLCA
-TCGA-49-6742-11A-01R-1858-07	Cancer_Type	LUAD
-TCGA-DD-A3A2-11A-11R-A213-07	Cancer_Type	LIHC
-TCGA-BH-A0DV-11A-22R-A12P-07	Cancer_Type	BRCA
-TCGA-GE-A2C6-11A-11R-A16R-07	Cancer_Type	THCA
-TCGA-56-7730-11A-01R-2125-07	Cancer_Type	LUSC
-TCGA-BH-A0H5-11A-62R-A115-07	Cancer_Type	BRCA
-TCGA-22-5489-11A-01R-1635-07	Cancer_Type	LUSC
+TCGA-K4-A3WV-11A-21R-A22U-07    Cancer_Type	Bladder Urothelial Carcinoma
+TCGA-49-6742-11A-01R-1858-07    Cancer_Type	Lung adenocarcinoma
+TCGA-DD-A3A2-11A-11R-A213-07    Cancer_Type	Liver hepatocellular carcinoma
+TCGA-BH-A0DV-11A-22R-A12P-07    Cancer_Type	Breast invasive carcinoma
+TCGA-GE-A2C6-11A-11R-A16R-07    Cancer_Type	Thyroid carcinoma
+TCGA-56-7730-11A-01R-2125-07    Cancer_Type	Lung squamous cell carcinoma
+TCGA-BH-A0H5-11A-62R-A115-07    Cancer_Type	Breast invasive carcinoma
+TCGA-22-5489-11A-01R-1635-07    Cancer_Type	Lung squamous cell carcinoma
