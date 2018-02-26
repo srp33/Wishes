@@ -1,4 +1,4 @@
-install.packages("XML")
+install.packages("XML", repos = "http://www.omegahat.org/R")
 library(XML)
 library(data.table)
 
