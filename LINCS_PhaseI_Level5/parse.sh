@@ -24,6 +24,7 @@ metadataOutFile=metadata.tsv.gz
 
 #miniconda is used to store panda software in environments need to activate environment
 echo "Setting up environment"
-source activate WishBuilderDependencies2
+#source activate WishBuilderDependencies2
+source activate lincs_env 
 
 python2 parse.py $sigFileName $gctxFileName $metadataOutFile $dataOutFile $geneFile $cellInfo $pertInfo $pertMetrics $sig_metrics
