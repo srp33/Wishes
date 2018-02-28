@@ -11,5 +11,5 @@ metadataOutFilegz=metadata.tsv.gz
 #source activate WishBuilderDependencies
 
 Rscript scrapeWebTCGA.R $tcgaHtml $nameToAbbreviation
-python parse.py $PatientCancerType $NormalFeatureCounts $transposedNormalFeatureCounts $dataOutFilegz $metadataOutFilegz $nameToAbbreviation
+python parse.py $PatientCancerType $NormalFeatureCounts $dataOutFilegz $metadataOutFilegz $nameToAbbreviation
 
