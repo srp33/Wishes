@@ -1,3 +1,3 @@
-title:  GSE62944 Tumor TPM
-featureDescription:  gene
-featureDescriptionPlural:  genes
+title: Gene-expression levels (TPM) for 9264 tumor samples from TCGA
+featureDescription: gene
+featureDescriptionPlural: genes
