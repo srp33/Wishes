@@ -28,8 +28,8 @@ with gzip.open(NormalTPM, 'r') as iF:
     with gzip.open(dataOutFile, 'w') as ofData:
         with gzip.open(metadataOutFile, 'w') as ofMeta:
             firstLine = data.T[0,:]
-            ofMeta.write(("SampleID\tVariable\tValue\n").encode())
-            ofData.write(("SampleID\t" + '\t'.join(firstLine[1:]) + '\n').encode())
+            ofMeta.write(("Sample\tVariable\tValue\n").encode())
+            ofData.write(("Sample\t" + '\t'.join(firstLine[1:]) + '\n').encode())
             for lineList in data.T[1:,:]:
                 ofMeta.write((lineList[0] + "\tCancer_Type\t" + abbvToNamesDict[patientIDToCancerDict[lineList[0]]] + "\n").encode())
                 ofData.write(('\t'.join(lineList) + '\n').encode())

@@ -8,7 +8,7 @@ nameToAbbreviation=$redirectedTempFolder/"nameToAbbreviation.txt"
 dataOutFilegz=data.tsv.gz
 metadataOutFilegz=metadata.tsv.gz
 
-source activate WishBuilderDependencies
+#source activate WishBuilderDependencies
 
 Rscript scrapeWebTCGA.R $tcgaHtml $nameToAbbreviation
 python parse.py $PatientCancerType $NormalTPM $dataOutFilegz $metadataOutFilegz $nameToAbbreviation
