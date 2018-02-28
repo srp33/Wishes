@@ -1,9 +1,11 @@
 import sys, gzip
+import numpy as np
 
 PatientCancerType = sys.argv[1]
 NormalTPM = sys.argv[2]
 dataOutFile = sys.argv[3]
 metadataOutFile = sys.argv[4]
+print(metadataOutFile)
 namesToAbbreviations = sys.argv[5]
 
 ## Read the namesToAbbreviation
@@ -18,7 +20,7 @@ with open(namesToAbbreviations, 'r') as f:
 patientIDToCancerDict = {}
 with gzip.open(PatientCancerType, 'r') as f:
     for line in f:
-        lineList= line.encode().strip('\n').split('\t')
+        lineList= line.decode().strip('\n').split('\t')
         patientIDToCancerDict[lineList[0]] = lineList[1]
 
 with gzip.open(NormalTPM, 'r') as iF:
@@ -26,8 +28,8 @@ with gzip.open(NormalTPM, 'r') as iF:
     with gzip.open(dataOutFile, 'w') as ofData:
         with gzip.open(metadataOutFile, 'w') as ofMeta:
             firstLine = data.T[0,:]
-            ofMeta.write(("SampleID\tVariable\tValue\n").encode())
-            ofData.write(("SampleID\t" + '\t'.join(firstLine[1:]) + '\n').encode())
+            ofMeta.write(("Sample\tVariable\tValue\n").encode())
+            ofData.write(("Sample\t" + '\t'.join(firstLine[1:]) + '\n').encode())
             for lineList in data.T[1:,:]:
                 ofMeta.write((lineList[0] + "\tCancer_Type\t" + abbvToNamesDict[patientIDToCancerDict[lineList[0]]] + "\n").encode())
                 ofData.write(('\t'.join(lineList) + '\n').encode())
