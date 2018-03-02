@@ -27,7 +27,6 @@ pertInfo=$redirectedTempFolder/GSE92742_Broad_LINCS_pert_info.txt.gz
 pertMetrics=$redirectedTempFolder/GSE92742_Broad_LINCS_pert_metrics.txt.gz
 
 #miniconda is used to store panda software in environments need to activate environment
-#source activate WishBuilderDependencies2
-source activate lincs_env
+source activate WishBuilderDependencies2
 
 python2 parse.py $instInfoFileName $gctxFileName $metadataOutFile $dataOutFile $geneFile $cellInfo $pertInfo $pertMetrics 
