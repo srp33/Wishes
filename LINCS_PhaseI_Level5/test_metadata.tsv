@@ -1,7 +1,7 @@
 sig_id	Variable	Value
 AML001_CD34_24H:A05	pert_id	DMSO
 AML001_CD34_24H:A05	cell_id	CD34
-AML001_CD34_24H:A05	pert_itime 24 h
+AML001_CD34_24H:A05	pert_itime	24 h
 AML001_CD34_24H:A05	distil_ss	4.78894
 AML001_CD34_24H:A05	distil_nsample	1
 AML001_CD34_24H:A05	cell_type	primary
@@ -17,7 +17,7 @@ AML001_CD34_24H:A06	distil_ss	3.87045
 AML001_CD34_24H:A06	distil_nsample	1
 AML001_CD34_24H:A06	cell_type	primary
 AML001_CD34_24H:A06	original_growth_pattern	suspension
-AML001_CD34_24H:A06	is_touchstone	0
+AML001_CD34_24H:A06	is_touchstone	1
 AML001_CD34_24H:A06	canonical_smiles	CS(=O)C
 AML001_CD34_24H:A06	tas_q75	0.122766
 AML001_CD34_24H:A06	icc	0.313591927289963

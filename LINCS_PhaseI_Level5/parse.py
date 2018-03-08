@@ -97,7 +97,6 @@ with gzip.open(metadataOut, 'w') as metaOut :
                 print(str(indecis) + " of 473647 molecular")
             rowList = row.strip('\n').split('\t')[:11] ## don't select distil_id
             for i in range(len(rowList) - 1): ##This should not grab the first and last column
-                print(headerList[i + 1])
                 if(str(rowList[i + 1]) != "-666") :
                     if headerList[i + 1] == "pert_time" or headerList[i + 1] == "pert_time_unit" :
                         continue
@@ -120,11 +119,11 @@ with gzip.open(metadataOut, 'w') as metaOut :
                             continue ## This catches SNUC4 that doesn't have any cellInfo, but is included in the sigInfo file
                     elif (headerList[i + 1] == "pert_id") :
                         try :
-                            pertInfoIdList = pertInfoDict[rowList[2]] ##This will add the pertInfo metadata to the metadata.tsv.gz
+                            pertInfoIdList = pertInfoDict[rowList[1]] ##This will add the pertInfo metadata to the metadata.tsv.gz
                             for j in range(len(pertInfoIdList)) :
                                 if(str(pertInfoIdList[j]) != "-666") :
                                     metaOut.write(str(rowList[0]) + '\t' + str(pertInfoHeaderList[j]) + '\t' + str(pertInfoIdList[j]) + '\n')
-                            pertMetricsIdList = pertMetricsDict[rowList[2]] ##This will add the pertMetrics metadata to the metadata.tsv.gz 
+                            pertMetricsIdList = pertMetricsDict[rowList[1]] ##This will add the pertMetrics metadata to the metadata.tsv.gz 
                             for i in range(len(pertMetricsIdList)) :
                                 if(str(pertMetricsIdList[i]) != "-666") :
                                     metaOut.write(str(rowList[0]) + '\t' + str(pertMetricsHeaderList[i]) + '\t' + str(pertMetricsIdList[i]) + '\n')
