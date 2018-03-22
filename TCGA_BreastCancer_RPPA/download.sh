@@ -5,7 +5,7 @@ mkdir -p $redirectedTemp
 
 
 url="https://tcga.xenahubs.net/download/TCGA.BRCA.sampleMap/RPPA.gz"
-fileName=$redirectedTemp/TCGA.BRCA.sampleMap
+fileName=$redirectedTemp/TCGA.BRCA.sampleMap.gz
 wget -O $fileName $url
 gunzip $fileName
 
