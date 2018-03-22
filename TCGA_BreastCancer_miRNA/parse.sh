@@ -10,17 +10,17 @@
 redirectedTemp=tmp
 
 #InFile
-miRNAdata=$redirectedTemp/"miRNA_HiSeq_gene.gz"
+miRNAdata=$redirectedTemp/"miRNA_HiSeq_gene"
 patientCancerType=$redirectedTemp/"GSE62944_06_01_15_TCGA_24_CancerType_Samples.txt"
 
 #OutFile
 dataOutFilegz=data.tsv
 metadataOutFilegz=metadata.tsv
 
-python3 parseData.py $CNVdata $dataOutFilegz
+python3 parseData.py $miRNAdata $dataOutFilegz
 python3 parseMeta.py $patientCancerType $metadataOutFilegz
-python3 averageValues.py
-
+#python3 averageValues.py $datOutFilegz
+#The code was checked and there are no duplicate values, so this code is unnecessary
 
 gzip $dataOutFilegz
 gzip $metadataOutFilegz
