@@ -17,7 +17,6 @@ dataOutFilegz=data.tsv
 metadataOutFilegz=metadata.tsv
 
 Rscript parse.R
-python3 parseMeta.py $patientCancerType $metadataOutFilegz
 
 
 gzip $dataOutFilegz

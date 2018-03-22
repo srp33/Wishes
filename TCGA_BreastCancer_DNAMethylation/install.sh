@@ -1,3 +1,3 @@
 #! /bin/bash
 
-R install.R
+Rscript install.R

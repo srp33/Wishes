@@ -1,1 +1,3 @@
-install.packages("readr", "dplyr", "tidyr")
+install.packages("readr")
+install.packages("dplyr")
+install.packages("tidyr")
