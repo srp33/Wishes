@@ -97,3 +97,4 @@ with open(dataOutFile, 'w') as ofData:
             except KeyError: 
                  continue #This will catch the following mismatches: RS4_11, EKVX, SF539, SNB75, SF268, MOLT-3, HOP-92, HOP-62, UO-31, WM983B, HOP-62, EKVX
 
+
