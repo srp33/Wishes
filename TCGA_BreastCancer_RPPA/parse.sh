@@ -26,5 +26,6 @@ python3 parseMeta.py $patientCancerType $metadataOutFilegz
 gzip $dataOutFilegz
 gzip $metadataOutFilegz
 
+python3 keep_common_samples.py "metadata.tsv.gz" "data.tsv.gz"
 
 #source deactivate WishBuilderDependencies
