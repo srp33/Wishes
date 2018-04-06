@@ -1,18 +1,10 @@
 SampleID	Variable	Value
-TCGA-3C-AAAU-01	form_completion_date	2014-1-13
-TCGA-3C-AAAU-01	metastatic_tumor_indicator	[Not Available]
-TCGA-3C-AAAU-01	Somatic mutation	SRBD1
-TCGA-3C-AAAU-01	Somatic mutation	PTCHD1
-TCGA-3C-AALI-01	form_completion_date	2014-7-28
-TCGA-3C-AALI-01	metastatic_tumor_indicator	[Not Available]
-TCGA-3C-AALI-01	Somatic mutation	ADRA2C
-TCGA-3C-AALI-01	Somatic mutation	NUDT10
-TCGA-Z7-A8R5-01	form_completion_date	2014-7-9
-TCGA-Z7-A8R5-01	metastatic_tumor_indicator	[Not Available]
-TCGA-Z7-A8R5-01	Somatic mutation	DHX9
-TCGA-Z7-A8R5-01	Somatic mutation	DYNC1I1
-TCGA-Z7-A8R6-01	form_completion_date	2014-7-9
-TCGA-Z7-A8R6-01	metastatic_tumor_indicator	[Not Available]
-TCGA-Z7-A8R6-01	Somatic mutation	PRMT6
-TCGA-Z7-A8R6-01	Somatic mutation	STAG2
+TCGA-OL-A66H-01	Somatic mutation	BRCA
+TCGA-3C-AALK-01	Somatic mutation	BRCA
+TCGA-GM-A4E0-01	Somatic mutation	BRCA
+TCGA-AC-A5XU-01	Somatic mutation	BRCA
+TCGA-A2-A0T1-01	Somatic mutation	BRCA
+TCGA-A7-A3J0-01	Somatic mutation	BRCA
+TCGA-A7-A0DC-01	Somatic mutation	BRCA
+TCGA-BH-A1EW-01	Somatic mutation	BRCA
 
