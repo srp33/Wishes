@@ -31,6 +31,7 @@ wget -O $fileName $url
 #downloading CCLE_copynumber_byGene_2013-12-03.txt.gz
 url="https://portals.broadinstitute.org/ccle_legacy/downloadFile/DefaultSystemRoot/exp_10/ds_20/CCLE_copynumber_byGene_2013-12-03.txt.gz?downloadff=true&fileId=17599"
 fileName=$redirectedTempFolder/CCLE_copynumber_byGene_2013-12-03.txt.gz
+gunzip $fileName
 
 wget -O $fileName $url
 
