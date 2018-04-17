@@ -1,3 +1,4 @@
+library(stats)
 library(readr,lib.loc='~/Rlib')
 library(dplyr,lib.loc='~/Rlib')
 library(tidyr,lib.loc='~/Rlib')
