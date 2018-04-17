@@ -11,7 +11,7 @@ dataOutFile=data.tsv
 metadataOutFile=metadata.tsv
 dataOutFilegz=data.tsv.gz
 metadataOutFilegz=metadata.tsv.gz
-
+#Make sure old files are deleted#Make sure old files are deleted
 rm -f $metadataOutFilegz
 rm -f $dataOutFilegz
 
