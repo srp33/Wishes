@@ -1,7 +1,7 @@
 import sys, gzip
 
-inFilePath = sys.argv[1] #"expression_main.txt"
-outFilePath = sys.argv[2] #"data.txt"
+inFilePath = sys.argv[1] 
+outFilePath = sys.argv[2] 
 
 tumorSamples = {} #To link tumor sample to a set of it's Hugo Values
 

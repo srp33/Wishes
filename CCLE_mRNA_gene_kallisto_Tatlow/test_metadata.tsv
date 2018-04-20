@@ -19,3 +19,6 @@ HT55_LARGE_INTESTINE	Site Primary	large_intestine
 HT55_LARGE_INTESTINE	Hybrid Capture Sequencing	yes
 COLO680N_OESOPHAGUS	Gender	F
 COLO680N_OESOPHAGUS	Hybrid Capture Sequencing	yes
+22RV1_PROSTATE	SomaticMutation	AGRN
+22RV1_PROSTATE	SomaticMutation	DOPEY2
+HT144_SKIN	SomaticMutation	ESRRG
