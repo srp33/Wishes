@@ -11,3 +11,4 @@ fileName=$redirectedTemp/GSE62944_06_01_15_TCGA_24_CancerType_Samples.txt.gz
 wget -O $fileName $url
 gunzip $fileName
 
+wget -O $redirectedTemp/"GPL16304-47833.txt.gz" https://osf.io/dw5a8/download
