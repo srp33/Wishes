@@ -4,6 +4,7 @@ library(tidyr,lib.loc='~/Rlib')
 library(crayon,lib.loc='~/Rlib')
 library(utf8,lib.loc='~/Rlib')
 library(cli,lib.loc='~/Rlib')
+library(tidyselect,lib.loc='~/Rlib')
 
 metadata450K <- read_tsv("tmp/GPL16304-47833.txt.gz", comment="#") %>% select(ID, Distance_closest_TSS, Closest_TSS_gene_name) %>% dplyr::rename(Probe=ID, TSS_Distance=Distance_closest_TSS, Gene=Closest_TSS_gene_name) %>% arrange(Gene, TSS_Distance)
 
