@@ -6,8 +6,8 @@ patientCancerType=$redirectedTempFolder/GSE62944_06_01_15_TCGA_24_CancerType_Sam
 tumorFeatureCounts=$redirectedTempFolder/GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_FeatureCounts.txt.gz
 tcgaHtml=$redirectedTempFolder/"tcga_abbreviations.html"
 nameToAbbreviation=$redirectedTempFolder/"nameToAbbreviation.txt"
-dataOut=data.tsv.gz
-metadataOut=metadata.tsv.gz
+dataOut=Gene_Expression.tsv.gz
+metadataOut=Clinical.tsv.gz
 
 #source activate WishBuilderDependencies
 
