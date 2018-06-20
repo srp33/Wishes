@@ -17,6 +17,7 @@ expression=$redirectedTempFolder/sanger1018_brainarray_ensemblgene_rma.txt.gz
 expressiontmp=$redirectedTempFolder/expressiontmp.tsv.gz
 dataOutFilegz=data.tsv.gz
 metadataOutFilegz=metadata.tsv.gz
+convertedMetaOut=Clinical.tsv.gz
 
 #miniconda is used to store panda software in environments need to activate environment
 echo "Setting up environment"
@@ -24,3 +25,4 @@ echo "Setting up environment"
 source activate my_GDSC_Expression_env
 
 python parse.py $cellLine $doseResponse $screenedComponents $RACS $variants $expression $metadataOutFilegz $expressiontmp $dataOutFilegz 
+python3 convertTallFormatToWide.py $metadataOutFilegz $convertedMetaOut
