@@ -23,6 +23,7 @@ minicondaPath=$softwareFolder/miniconda/bin/
 #outFiles
 expressionOut=data.tsv.gz
 metadataOut=metadata.tsv.gz
+convertedMetaOut=Clinical.tsv.gz
 
 rm -f $metadataOut
 rm -f $expressionOut
@@ -46,3 +47,5 @@ python3 $makeHeaders $convertedHeaders $expressionOut $metadataOut
 python3 $makeBS $fileNames $bashFileNames $expressionOut $metadataOut
 
 bash $bashFileNames
+
+python3 convertTallFormatToWide.py $metadataOut $convertedMetaOut

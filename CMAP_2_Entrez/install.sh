@@ -1,5 +1,6 @@
 #! /bin/bash
 
+cp ../Helper/convertTallFormatToWide.py .
 #install all the R packages in the environment
 #source activate WishBuilderDependencies 
 conda install -y -c bioconda r-sleuth 
