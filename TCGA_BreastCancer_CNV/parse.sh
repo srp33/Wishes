@@ -16,6 +16,7 @@ patientCancerType=$redirectedTemp/"GSE62944_06_01_15_TCGA_24_CancerType_Samples.
 #OutFile
 dataOutFilegz=data.tsv
 metadataOutFilegz=metadata.tsv
+convertedMetaOut=Clincal.tsv.gz
 #Values is a file previously created by matches.py that contains the common samples of data and metadata
 commonValues=values
 
@@ -32,4 +33,7 @@ gzip $metadataOutFilegz
 
 #To insure only common samples
 python3 keep_common_samples.py "metadata.tsv.gz" "data.tsv.gz"
+
+#Conversion of metadata to wide format
+python3 convertTallFormatToWide.py "metadata.tsv.gz" $convertedMetaOut
 #source deactivate WishBuilderDependencies
