@@ -17,6 +17,7 @@ geneFile=$redirectedTempFolder/GSE70138_Broad_LINCS_gene_info_2017-03-06.txt.gz
 #Will Create
 dataOutFile=data.tsv.gz
 metadataOutFile=metadata.tsv.gz
+convertedMetaOut=Clinical.tsv.gz
 
 #Other Metadata files that are included in final output
 cellInfo=$redirectedTempFolder/GSE70138_Broad_LINCS_cell_info_2017-04-28.txt.gz
@@ -28,3 +29,4 @@ echo "Setting up environment"
 source activate lincs_env
 
 python parse.py $instInfoFileName $gctxFileName $metadataOutFile $dataOutFile $geneFile $cellInfo $pertInfo 
+python3 convertTallFormatToWide.py $metadataOutFile $convertedMetaOut
