@@ -3,7 +3,7 @@ redirectedTempFolder=tmp
 mkdir -p $redirectedTempFolder
 
 #downloading the tar file 
-url="https://osf.io/vd7cf/download"
+url="https://osf.io/xtuq2/download"
 fileName=$redirectedTempFolder/cmap.tar
 
 wget -O $fileName $url
