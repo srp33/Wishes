@@ -26,5 +26,5 @@ gzip $metadataOutFilegz
 
 
 python3 keep_common_samples.py "metadata.tsv.gz" "data.tsv.gz"
-
+python3 convertTallFormatToWide.py "metadata.tsv.gz" "Clinical.tsv.gz"
 #source deactivate WishBuilderDependencies
