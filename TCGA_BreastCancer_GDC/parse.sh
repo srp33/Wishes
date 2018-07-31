@@ -28,6 +28,7 @@ somaticsniperOut=$outFiles/"TCGA.BRCA.somaticsniper.8b1474b5-0216-4dbc-bc21-e5c6
 singleOut=$outFiles/condensed.maf
 dataOutFilegz=data.tsv
 metadataOutFilegz=metadata.tsv
+convertedMetaOut=Clinical.tsv.gz
 
 mkdir -p $outFiles
 
@@ -37,3 +38,5 @@ python2 parse3.py $clinical $patientCancerType $expression $transposedTumorTPM $
 
 gzip $dataOutFilegz
 gzip $metadataOutFilegz
+
+python3 convertTallFormatToWide.py "metadata.tsv.gz" $convertedMetaOut
