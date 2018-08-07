@@ -11,7 +11,7 @@ patientCancerType=tmp/GSE62944_06_01_15_TCGA_24_CancerType_Samples.txt.gz
 clinicalData=tmp/GSE62944_06_01_15_TCGA_24_548_Clinical_Variables_9264_Samples.txt.gz
 abbreviationFile=cancerTypeAbbreviations.tsv
 
-#python3 parseData.py $miRNAdata miRNA.tsv.gz
+python3 parseData.py $miRNAdata miRNA.tsv.gz
 python3 parseCancerTypes.py $patientCancerType $abbreviationFile tmp/Clinical.tsv.gz
 #python3 parseClinical.py $clinicalData tmp/Clinical.tsv.gz
 python3 parseClinical.py tmp/cleanClinical.tsv.gz tmp/Clinical.tsv.gz
