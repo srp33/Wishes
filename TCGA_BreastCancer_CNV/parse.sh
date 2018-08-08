@@ -16,7 +16,7 @@ patientCancerType=$redirectedTemp/"GSE62944_06_01_15_TCGA_24_CancerType_Samples.
 #OutFile
 dataOutFilegz=data.tsv
 metadataOutFilegz=metadata.tsv
-convertedMetaOut=Clincal.tsv.gz
+convertedMetaOut=Clinical.tsv.gz
 #Values is a file previously created by matches.py that contains the common samples of data and metadata
 commonValues=values
 
