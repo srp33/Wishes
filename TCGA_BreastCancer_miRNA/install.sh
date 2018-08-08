@@ -1,3 +1,3 @@
 #! /bin/bash/
 
-cp ../Helper/converTallFormatToWide.py .
+cp ../Helper/convertTallFormatToWide.py .
