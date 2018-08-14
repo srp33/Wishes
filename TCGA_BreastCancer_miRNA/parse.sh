@@ -14,7 +14,6 @@ abbreviationFile=cancerTypeAbbreviations.tsv
 python3 parseData.py $miRNAdata miRNA.tsv.gz
 python3 parseCancerTypes.py $patientCancerType $abbreviationFile tmp/Clinical.tsv.gz
 python3 parseClinical.py $clinicalData tmp/Clinical.tsv.gz
-#python3 parseClinical.py tmp/cleanClinical.tsv.gz tmp/Clinical.tsv.gz
 
 ############################################
 # Write a script that removes variables from tmp/Clinical.tsv.gz
