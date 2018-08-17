@@ -5,15 +5,14 @@ metaData=$redirectedTempFolder/GSE62944_06_01_15_TCGA_24_548_Clinical_Variables_
 patientCancerType=$redirectedTempFolder/GSE62944_06_01_15_TCGA_24_CancerType_Samples.txt.gz
 tumorTPM=$redirectedTempFolder/GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_TPM.txt.gz
 tcgaHtml=$redirectedTempFolder/"tcga_abbreviations.html"
-nameToAbbreviation=$redirectedTempFolder/"nameToAbbreviation.txt"
+nameToAbbreviation="nameToAbbreviation.txt"
 dataOut=data.tsv.gz
 metadataOut=metadata.tsv.gz
 metaDataConverted=Clinical.tsv.gz
 #source activate WishBuilderDependencies
 
-Rscript scrapeWebTCGA.R $tcgaHtml $nameToAbbreviation
 python3 parse.py $metaData $patientCancerType $tumorTPM $dataOut $metadataOut $nameToAbbreviation
-python3 translate.py $metadataOut $metaDataConverted
+python3 convertTallFormatToWide.py $metadataOut $metaDataConverted
 <<<<<<< HEAD
 =======
 
