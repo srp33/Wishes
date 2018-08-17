@@ -36,7 +36,7 @@ with open(namesToAbbreviations, 'r') as f:
         lineList = line.strip('\n').split('\t')
         abbvToNamesDict[lineList[2]] = lineList[1]
 
-# This code takes the new transposedNormalTPM and addes the PatientCancerType to the second column and writes it to the outFile data.tsv.gz
+# This code takes the new transposedNormalTPM and addes the PatientCancerType to the second column and writes it to the outFile
 patientIDToCancerDict = {}
 with gzip.open(PatientCancerType, 'r') as f:
     for line in f:

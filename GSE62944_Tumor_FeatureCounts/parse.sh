@@ -13,4 +13,3 @@ metadataTranslated=Clinical.tsv.gz
 
 python3 parse.py $metaData $patientCancerType $tumorFeatureCounts $dataOut $metadataOut $nameToAbbreviation
 python3 convertTallFormatToWide.py $metadataOut $metadataTranslated
-rm -f $metadataOut
