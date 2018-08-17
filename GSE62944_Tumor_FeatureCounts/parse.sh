@@ -12,6 +12,5 @@ metadataTranslated=Clinical.tsv.gz
 
 #source activate WishBuilderDependencies
 
-Rscript scrapeWebTCGA.R $tcgaHtml $nameToAbbreviation
 python3 parse.py $metaData $patientCancerType $tumorFeatureCounts $dataOut $metadataOut $nameToAbbreviation
 python3 convertTallFormatToWide.py $metadataOut $metadataTranslated
