@@ -1,4 +1,3 @@
-#make redirectedTempFolder
 redirectedTempFolder=tmp
 mkdir -p $redirectedTempFolder
 
