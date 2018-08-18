@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -o errexit
+
 redirectedTempFolder=tmp
 cellLine=$redirectedTempFolder/Cell_Lines_Details.xlsx
 doseResponse=$redirectedTempFolder/v17_fitted_dose_response.xlsx
