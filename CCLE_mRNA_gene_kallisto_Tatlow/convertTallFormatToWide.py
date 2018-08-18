@@ -1,6 +1,5 @@
 from sys import argv
 import gzip
-import os
 
 myMInFile = argv[1]
 myMOutFile = argv[2]
@@ -48,4 +47,3 @@ def translate(myMInFile, myMOutFile):
 
 
 translate(myMInFile, myMOutFile)
-os.remove(myMInFile)

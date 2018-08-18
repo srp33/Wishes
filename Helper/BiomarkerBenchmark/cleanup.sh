@@ -1,5 +1,4 @@
-rm -f data.tsv.gz
-rm -f metadata.tsv.gz
+rm -f *.gz
 rm -rf tmp
 rm -f download.sh
 rm -f parse.py
