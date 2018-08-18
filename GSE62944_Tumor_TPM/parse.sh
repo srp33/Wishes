@@ -11,3 +11,4 @@ metaDataConverted=Clinical.tsv.gz
 
 python3 parse.py $metaData $patientCancerType $tumorTPM $dataOut $metadataOut $nameToAbbreviation
 python3 convertTallFormatToWide.py $metadataOut $metaDataConverted
+rm -f $metadataOut
