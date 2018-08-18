@@ -10,7 +10,6 @@ function downloadFile {
   fi
 }
 
-#make redirectedTempFolder
 redirectedTempFolder=tmp
 mkdir -p $redirectedTempFolder
 
@@ -24,4 +23,3 @@ downloadFile "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE70138&format=fil
 
 cd $redirectedTempFolder
 gunzip "LINCS_PhaseII_Level5.gctx.gz"
-
