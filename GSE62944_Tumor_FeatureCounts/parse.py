@@ -12,18 +12,20 @@ namesToAbbreviations = sys.argv[6]
 def writeMetaData(ofMeta, metaDataList, code) :
     allNA = True
     notAvailableMetaVariables = []
+
     for i in range(len(metaDataList)) :
-        if(metaDataList[i].decode(code) != "NA" and metaDataList[i].decode(code) != "[Not Applicable]") : #exclude NA and [Not Applicable] keep [Not Available]
-            if(metaDataList[i].decode(code) != "[Not Available]") :
-                ofMeta.write((lineList[0]  + '\t' + metadataDict["header"][i].decode(code) + '\t' + metaDataList[i].decode(code) + '\n').encode())
-                allNA = False
-            else :
-                #If all the values are [Not Available] we do not want to include them because we won't have any metavariables for the patient
-                notAvailableMetaVariables.append(i)
+        metaValue = metaDataList[i].decode(code)
+
+        if metaValue not in ["[Not Applicable]", "[Not Available]", "NA"]:
+            ofMeta.write((lineList[0]  + '\t' + metadataDict["header"][i].decode(code) + '\t' + metaValue + '\n').encode())
+            allNA = False
+        else:
+            #If all the values are [Not Available] we do not want to include them because we won't have any metavariables for the patient
+            notAvailableMetaVariables.append(i)
 
     if allNA  == False :
         for i in notAvailableMetaVariables : #Include the metavariables if not all of them are NA, [Not Applicable], and [Not Available]
-            ofMeta.write((lineList[0]  + '\t' + metadataDict["header"][i].decode(code)  + '\t' + metaDataList[i].decode(code) + '\n').encode())
+            ofMeta.write((lineList[0]  + '\t' + metadataDict["header"][i].decode(code)  + '\t' + "NA" + '\n').encode())
 
 
 ## Read the namesToAbbreviation
@@ -34,7 +36,7 @@ with open(namesToAbbreviations, 'r') as f:
         lineList = line.strip('\n').split('\t')
         abbvToNamesDict[lineList[2]] = lineList[1]
 
-# This code takes the new transposedNormalTPM and addes the PatientCancerType to the second column and writes it to the outFile data.tsv.gz
+# This code takes the new transposedNormalTPM and addes the PatientCancerType to the second column and writes it to the outFile
 patientIDToCancerDict = {}
 with gzip.open(PatientCancerType, 'r') as f:
     for line in f:
@@ -44,7 +46,7 @@ with gzip.open(PatientCancerType, 'r') as f:
 #store metainfo
 metadataDict = {}
 with gzip.open(metadata, 'r') as f :
-    data = np.genfromtxt(metadata,delimiter='\t',dtype='S50') 
+    data = np.genfromtxt(metadata,delimiter='\t',dtype='S50')
     metadataDict["header"] = data.T[0,3:]
     for line in data.T[1:,:] :
         metadataDict[line[0]] = line[3:]
@@ -58,17 +60,16 @@ with gzip.open(tumorFeatureCounts, 'r') as iF:
             ofMeta.write(("Sample\tVariable\tValue\n").encode())
             ofData.write(("Sample\t" + '\t'.join(firstLine[1:]) + '\n').encode())
             j = 0
-            for lineList in data.T[1:,:]: 
+            for lineList in data.T[1:,:]:
                 j += 1
                 if j % 50 == 0 :
                     print(str(j) + " of 9267")
                 ofMeta.write((lineList[0] + "\tCancer_Type\t" + abbvToNamesDict[patientIDToCancerDict[lineList[0]]] + "\n").encode())
                 metaDataList = metadataDict[lineList[0].encode('US-ASCII')]
-               
-                try : 
+
+                try :
                     writeMetaData(ofMeta, metaDataList, 'US-ASCII')
                 except UnicodeDecodeError : ## Using US-ASCII is much quicker, but it cannot convert all types, so I have encorporated this second fassion.
                     writeMetaData(ofMeta, metaDataList, 'UTF-8')
 
                 ofData.write(('\t'.join(lineList) + '\n').encode())
-
