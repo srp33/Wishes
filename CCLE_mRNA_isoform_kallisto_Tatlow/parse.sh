@@ -9,6 +9,7 @@ dataOutFile=data.tsv
 metadataOutFile=metadata.tsv
 dataOutFilegz=data.tsv.gz
 metadataOutFilegz=metadata.tsv.gz
+convertedMetaOut=Clinical.tsv.gz
 
 rm -f $metadataOutFilegz
 rm -f $dataOutFilegz
@@ -17,3 +18,5 @@ python3 parse.py $expressionData $clinicalAnnotations $dataOutFile $metadataOutF
 
 gzip $metadataOutFile
 gzip $dataOutFile
+
+python3 convertTallFormatToWide.py $metadataOutFilegz $convertedMetaOut
