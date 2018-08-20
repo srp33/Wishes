@@ -37,9 +37,15 @@ try :
     index = 0
     for line in subsubgrpData["matrix"] :
         a = np.asarray(line).astype(str)
-        value = str(rowgrp["id"][index])
+        value = rowgrp["id"][index].decode()
         f.write((value + '\t' + '\t'.join(a) + '\n').encode())
         index = index + 1
-        print(str(index) + " of 345976 expression data")
+
+#        if index == 100:
+#            break
+
+        if index % 1000 == 0:
+            print(str(index) + " of 345976 expression data")
+            sys.stdout.flush()
 finally :
     f.close()
