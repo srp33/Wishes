@@ -42,6 +42,9 @@ try :
         f.write((value + '\t' + '\t'.join(a) + '\n').encode())
         index = index + 1
 
+#        if index == 100:
+#            break
+
         if index % 1000 == 0:
             print(str(index) + " of 345976 expression data")
             sys.stdout.flush()
