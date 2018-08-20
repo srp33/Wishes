@@ -35,10 +35,12 @@ try :
     index = 0
     for line in subsubgrpData["matrix"] :
         a = np.asarray(line).astype(str)
-        number = str(rowgrp["id"][index])
+        number = rowgrp["id"][index].decode()
 
         f.write((number + '\t' + '\t'.join(a) + '\n').encode())
         index = index + 1
+#        if index % 100 == 0 :
+#            break
         if index % 1000 == 0 :
             print(str(index) + " of 473647 expression")
 
