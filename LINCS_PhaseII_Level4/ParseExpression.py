@@ -28,6 +28,7 @@ subsubgrpData = subgrpData.require_group('/0/DATA/0')
 print("Writing expression file")
 
 f = gzip.open(dataOut, 'w')
+
 try :
     f.write("Sample".encode())
     for value in colgrp["id"] :
@@ -35,11 +36,12 @@ try :
     f.write('\n'.encode())
 
     index = 0
+    outText = ""
     for line in subsubgrpData["matrix"] :
         sample = rowgrp["id"][index].decode()
         values = [str(x) for x in line.tolist()]
 
-        f.write((sample + '\t' + '\t'.join(values) + '\n').encode())
+        outText += (sample + '\t' + '\t'.join(values) + '\n').encode()
 
         index = index + 1
 #        if index == 10:
@@ -47,5 +49,11 @@ try :
         if index % 1000 == 0:
             print(str(index) + " of 345976 expression data")
             sys.stdout.flush()
+
+            f.write(outText)
+            outText = ""
+
+    if outText != "":
+        f.write(outText)
 finally :
     f.close()
