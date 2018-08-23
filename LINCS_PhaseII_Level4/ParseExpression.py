@@ -25,26 +25,25 @@ rowgrp = subgrpMeta.require_group('/0/META/COL')
 subgrpData = grpname.require_group('/0/DATA')
 subsubgrpData = subgrpData.require_group('/0/DATA/0')
 
-print("writing expression file")
+print("Writing expression file")
 
 f = gzip.open(dataOut, 'w')
 try :
     f.write("Sample".encode())
     for value in colgrp["id"] :
-        f.write(('\t' + geneDict[str(int(value))]).encode())
+        f.write(('\t' + geneDict[value.decode()]).encode())
     f.write('\n'.encode())
 
     index = 0
     for line in subsubgrpData["matrix"] :
-        a = np.asarray(line).astype(str)
-        value = rowgrp["id"][index].decode()
+        sample = rowgrp["id"][index].decode()
+        values = [str(x) for x in line.tolist()]
 
-        f.write((value + '\t' + '\t'.join(a) + '\n').encode())
+        f.write((sample + '\t' + '\t'.join(values) + '\n').encode())
+
         index = index + 1
-
-#        if index == 100:
+#        if index == 10:
 #            break
-
         if index % 1000 == 0:
             print(str(index) + " of 345976 expression data")
             sys.stdout.flush()
