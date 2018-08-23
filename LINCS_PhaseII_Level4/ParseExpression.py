@@ -39,9 +39,9 @@ try :
     outText = ""
     for line in subsubgrpData["matrix"] :
         sample = rowgrp["id"][index].decode()
-        values = [str(x) for x in line.tolist()]
+        values = [sample] + [str(x) for x in line.tolist()]
 
-        outText += (sample + '\t' + '\t'.join(values) + '\n').encode()
+        outText += "\t".join(values) + '\n'
 
         index = index + 1
 #        if index == 10:
@@ -50,10 +50,10 @@ try :
             print(str(index) + " of 345976 expression data")
             sys.stdout.flush()
 
-            f.write(outText)
+            f.write(outText.encode())
             outText = ""
 
     if outText != "":
-        f.write(outText)
+        f.write(outText.encode())
 finally :
     f.close()
