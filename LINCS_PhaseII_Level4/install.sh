@@ -1,3 +1,3 @@
 #! /bin/bash
 
-source ../Helper/LINCS/install_helper.sh
+cp ../Helper/convertTallFormatToWide.py .
