@@ -1,4 +1,3 @@
-rm -f data.tsv.gz
-rm -f metadata.tsv.gz
+rm -f *.tsv.gz
+rm -f convertTallFormatToWide.py
 rm -rf tmp 
-rm -rf Software

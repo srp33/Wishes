@@ -17,7 +17,7 @@ wget -O $fileName $url
 cd $redirectedTempFolder
 tar -xvf GSE62944_RAW.tar
 
-remove other files
+#remove other files
 rm GSE62944_RAW.tar
 rm GSM1536837_01_27_15_TCGA_20.Illumina.tumor_Rsubread_FeatureCounts.txt.gz
 rm GSM1536837_01_27_15_TCGA_20.Illumina.tumor_Rsubread_FPKM.txt.gz
@@ -27,10 +27,3 @@ rm GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_FPKM.txt.gz
 rm GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_TPM.txt.gz
 rm GSM1697009_06_01_15_TCGA_24.normal_Rsubread_FPKM.txt.gz
 rm GSM1697009_06_01_15_TCGA_24.normal_Rsubread_TPM.txt.gz
-
-#downloading a webpage to scrape in R for info
-
-url="https://tcga-data.nci.nih.gov/docs/publications/tcga/"
-fileName="tcga_abbreviations.html"
-
-wget -O $fileName $url

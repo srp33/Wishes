@@ -58,6 +58,7 @@ with gzip.open(tumorFeatureCounts, 'r') as iF:
             print("Reading expression file")
             data = np.genfromtxt(iF, delimiter='\t',dtype=str)
             print("Done reading expression file")
+
             firstLine = data.T[0,:].astype(str)
             ofMeta.write(("Sample\tVariable\tValue\n").encode())
             ofData.write(("Sample\t" + '\t'.join(firstLine[1:]) + '\n').encode())
