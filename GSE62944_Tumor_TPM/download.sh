@@ -1,4 +1,3 @@
-#make redirectedTempFolder
 redirectedTempFolder=tmp
 mkdir -p $redirectedTempFolder
 
@@ -33,10 +32,3 @@ rm GSM1536837_06_01_15_TCGA_24.tumor_Rsubread_FPKM.txt.gz
 rm GSM1697009_06_01_15_TCGA_24.normal_Rsubread_FeatureCounts.txt.gz
 rm GSM1697009_06_01_15_TCGA_24.normal_Rsubread_FPKM.txt.gz
 rm GSM1697009_06_01_15_TCGA_24.normal_Rsubread_TPM.txt.gz
-
-#downloading a webpage to scrape in R for info
-
-url="https://tcga-data.nci.nih.gov/docs/publications/tcga/"
-fileName="tcga_abbreviations.html"
-
-wget -O $fileName $url

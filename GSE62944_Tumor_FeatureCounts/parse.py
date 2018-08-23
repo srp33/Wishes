@@ -28,7 +28,7 @@ def writeMetaData(ofMeta, metaDataList, code) :
             ofMeta.write((lineList[0]  + '\t' + metadataDict["header"][i].decode(code)  + '\t' + "NA" + '\n').encode())
 
 
-## Read the namesToAbbreviation
+print("Read the namesToAbbreviation")
 abbvToNamesDict = {}
 with open(namesToAbbreviations, 'r') as f:
     f.readline()
@@ -36,14 +36,14 @@ with open(namesToAbbreviations, 'r') as f:
         lineList = line.strip('\n').split('\t')
         abbvToNamesDict[lineList[2]] = lineList[1]
 
-# This code takes the new transposedNormalTPM and addes the PatientCancerType to the second column and writes it to the outFile data.tsv.gz
+print("This code takes the new transposedNormalTPM and addes the PatientCancerType to the second column and writes it to the outFile")
 patientIDToCancerDict = {}
 with gzip.open(PatientCancerType, 'r') as f:
     for line in f:
         lineList= line.decode().strip('\n').split('\t')
         patientIDToCancerDict[lineList[0]] = lineList[1]
 
-#store metainfo
+print("Store metainfo")
 metadataDict = {}
 with gzip.open(metadata, 'r') as f :
     data = np.genfromtxt(metadata,delimiter='\t',dtype='S50')
@@ -51,11 +51,14 @@ with gzip.open(metadata, 'r') as f :
     for line in data.T[1:,:] :
         metadataDict[line[0]] = line[3:]
 
-#read Tumor expression info and print out files
+print("read Tumor expression info and print out files")
 with gzip.open(tumorFeatureCounts, 'r') as iF:
     with gzip.open(dataOutFile, 'w') as ofData:
         with gzip.open(metadataOutFile, 'w') as ofMeta:
-            data = np.genfromtxt(iF,delimiter='\t',dtype=str)
+            print("Reading expression file")
+            data = np.genfromtxt(iF, delimiter='\t',dtype=str)
+            print("Done reading expression file")
+
             firstLine = data.T[0,:].astype(str)
             ofMeta.write(("Sample\tVariable\tValue\n").encode())
             ofData.write(("Sample\t" + '\t'.join(firstLine[1:]) + '\n').encode())
