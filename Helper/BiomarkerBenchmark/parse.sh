@@ -7,15 +7,14 @@ dataOutFile=data.tsv
 metadataOutFile=metadata.tsv
 dataOutFilegz=data.tsv.gz
 metadataOutFilegz=metadata.tsv.gz
-metadataOutTranslated=Clinical.tsv.gz
+convertedMetaOut=Clinical.tsv.gz
 
 rm -f $metadataOutFilegz
 rm -f $dataOutFilegz
-rm -f $metadataOutTranslated
 
 python parse.py $Clinical $Expression $dataOutFile $metadataOutFile 
 
 gzip $metadataOutFile
 gzip $dataOutFile
 
-python3 convertTallFormatToWide.py $metadataOutFilegz $metadataOutTranslated
+python3 convertTallFormatToWide.py $metadataOutFilegz $convertedMetaOut

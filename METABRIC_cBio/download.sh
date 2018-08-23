@@ -10,11 +10,22 @@ function downloadData {
   fileName="$(basename $url)"
 
   # Check to see if the file has been downloaded already. If not, download it.
-  if [ ! -f "$fileName" ]
+  if [ ! -f "tmp/$fileName" ]
   then
-    curl -o "$fileName" -L "$url"
+    echo Downloading "$fileName"
+    curl -o "tmp/$fileName" -L "$url"
+
+    if [ ! -f "tmp/$fileName" ]
+    then
+      echo "Trying $fileName again"
+      curl -o "tmp/$fileName" -L "$url"
+    fi
   fi
 }
 
-downloadData https://github.com/cBioPortal/datahub/raw/master/public/brca_metabric.tar.gz
-tar -xzf brca_metabric.tar.gz
+mkdir -p tmp
+
+for f in data_clinical_patient.txt data_clinical_sample.txt data_CNA.txt data_mutations_extended.txt data_expression.txt
+do
+  downloadData https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/brca_metabric/$f
+done
