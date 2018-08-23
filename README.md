@@ -4,7 +4,7 @@ Fortunately, thousands of biology-related datasets are publicly available on the
 
 To address this problem, the Piccolo lab is developing _Geney_, a Web-based tool that will enable researchers to query such datasets in a consistent and easy manner. In addition to _Geney_, we are developing _WishBuilder_, a system that enables datasets to be imported into _Geney_, irrespective of the format in which the data were originally stored. This system downloads data from public Web servers, reformats the data, and stores it in a consistent, queryable format. To facilitate this process, we are asking for help from BYU students to write computer scripts for preparing the data. The more datasets we prepare, the more useful Geney will be!
 
-#### You can see a [prototype of Geney](http://45.56.87.243) here.
+#### You can see a [prototype of Geney](http://piccololab.byu.edu) here.
 
 ## Contribute
 
