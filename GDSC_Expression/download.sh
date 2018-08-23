@@ -11,7 +11,6 @@ function downloadData {
   fi
 }
 
-#make redirectedTempFolder
 redirectedTempFolder=tmp
 mkdir -p $redirectedTempFolder
 
