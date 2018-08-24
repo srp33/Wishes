@@ -1,0 +1,35 @@
+	Tumor Names	Tumor Abbreviations
+1	Acute Myeloid Leukemia	LAML
+2	Adrenocortical carcinoma	ACC
+3	Bladder Urothelial Carcinoma	BLCA
+4	Brain Lower Grade Glioma	LGG
+5	Breast invasive carcinoma	BRCA
+6	Cervical squamous cell carcinoma and endocervical adenocarcinoma	CESC
+7	Cholangiocarcinoma	CHOL
+8	Colon adenocarcinoma	COAD
+9	Esophageal carcinoma	ESCA
+10	FFPE Pilot Phase II	FPPP
+11	Glioblastoma multiforme	GBM
+12	Head and Neck squamous cell carcinoma	HNSC
+13	Kidney Chromophobe	KICH
+14	Kidney renal clear cell carcinoma	KIRC
+15	Kidney renal papillary cell carcinoma	KIRP
+16	Liver hepatocellular carcinoma	LIHC
+17	Lung adenocarcinoma	LUAD
+18	Lung squamous cell carcinoma	LUSC
+19	Lymphoid Neoplasm Diffuse Large B-cell Lymphoma	DLBC
+20	Mesothelioma	MESO
+21	Ovarian serous cystadenocarcinoma	OV
+22	Pancreatic adenocarcinoma	PAAD
+23	Pheochromocytoma and Paraganglioma	PCPG
+24	Prostate adenocarcinoma	PRAD
+25	Rectum adenocarcinoma	READ
+26	Sarcoma	SARC
+27	Skin Cutaneous Melanoma	SKCM
+28	Stomach adenocarcinoma	STAD
+29	Testicular Germ Cell Tumors	TGCT
+30	Thymoma	THYM
+31	Thyroid carcinoma	THCA
+32	Uterine Carcinosarcoma	UCS
+33	Uterine Corpus Endometrial Carcinoma	UCEC
+34	Uveal Melanoma	UVM
