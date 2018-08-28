@@ -23,7 +23,7 @@ with gzip.open(geneFile, 'r') as f :
         list = line.decode().strip('\n').split('\t')
         geneDict[list[0]] = list[1]
 
-print("writing expression file")
+print("Writing expression file")
 f = gzip.open(dataOut, 'w')
 
 try :
@@ -40,8 +40,10 @@ try :
         f.write((number + '\t' + '\t'.join(a) + '\n').encode())
         index = index + 1
 
+#        if index % 100 == 0 :
+#            break
         if index % 1000 == 0 :
-            print(str(index) + " of 473647 expression")
+            print(str(index) + " expression rows")
 
 finally :
     f.close()
