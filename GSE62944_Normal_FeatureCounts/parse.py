@@ -26,8 +26,8 @@ with gzip.open(PatientCancerType, 'r') as f:
 #with open(transposedNormalTPM, 'r') as iF:
 with gzip.open(NormalTPM, 'r') as iF:
     data = np.genfromtxt(iF,delimiter='\t',dtype=str)
-    with gzip.open(dataOutFile, 'w') as ofData:
-        with gzip.open(metadataOutFile, 'w') as ofMeta:
+    with open(dataOutFile, 'w') as ofData:
+        with open(metadataOutFile, 'w') as ofMeta:
             firstLine = data.T[0,:]
             ofMeta.write(("Sample\tVariable\tValue\n").encode())
             ofData.write(("Sample\t" + '\t'.join(firstLine[1:]) + '\n').encode())
