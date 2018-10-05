@@ -27,7 +27,7 @@ def shouldKeepColumn(values):
     return len(numNonMissing) > 0
 
 with gzip.open(inFilePath, 'r') as inFile:
-    with gzip.open(outFilePath, 'a') as outFile:
+    with open(outFilePath, 'a') as outFile:
         headerList = inFile.readline().decode().rstrip("\n").split("\t")
         sampleIDs = headerList[3:]
 
@@ -53,4 +53,4 @@ with gzip.open(inFilePath, 'r') as inFile:
                 if variableName == "cent17_copy_number" and value == "polisomy":
                     value = "NA"
 
-                outFile.write("{}\t{}\t{}\n".format(sampleID, variableName, value).encode())
+                outFile.write("{}\t{}\t{}\n".format(sampleID, variableName, value))
