@@ -25,11 +25,11 @@ with gzip.open(PatientCancerType, 'r') as f:
 
 with gzip.open(NormalTPM, 'r') as iF:
     data = np.genfromtxt(iF,delimiter='\t',dtype=str)
-    with gzip.open(dataOutFile, 'w') as ofData:
-        with gzip.open(metadataOutFile, 'w') as ofMeta:
+    with open(dataOutFile, 'w') as ofData:
+        with open(metadataOutFile, 'w') as ofMeta:
             firstLine = data.T[0,:]
-            ofMeta.write(("Sample\tVariable\tValue\n").encode())
-            ofData.write(("Sample\t" + '\t'.join(firstLine[1:]) + '\n').encode())
+            ofMeta.write(("Sample\tVariable\tValue\n"))
+            ofData.write(("Sample\t" + '\t'.join(firstLine[1:]) + '\n'))
             for lineList in data.T[1:,:]:
-                ofMeta.write((lineList[0] + "\tCancer_Type\t" + abbvToNamesDict[patientIDToCancerDict[lineList[0]]] + "\n").encode())
-                ofData.write(('\t'.join(lineList) + '\n').encode())
+                ofMeta.write((lineList[0] + "\tCancer_Type\t" + abbvToNamesDict[patientIDToCancerDict[lineList[0]]] + "\n"))
+                ofData.write(('\t'.join(lineList) + '\n'))
