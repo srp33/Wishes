@@ -13,8 +13,8 @@ with open(abbrevFilePath) as abbrevFile:
         abbrevDict[abbrev] = longerName
 
 with gzip.open(inFilePath, 'r') as inFile:
-    with gzip.open(outFilePath, 'w') as outFile:
-        outFile.write(("\t".join(["Sample","Variable","Value"]) + "\n").encode())
+    with open(outFilePath, 'w') as outFile:
+        outFile.write(("\t".join(["Sample","Variable","Value"]) + "\n"))
 
         for line in inFile:
             lineList = line.decode().strip('\n').split('\t')
@@ -23,4 +23,4 @@ with gzip.open(inFilePath, 'r') as inFile:
             cancerTypeAbbrev = lineList[1]
             cancerType = abbrevDict[cancerTypeAbbrev]
 
-            outFile.write(("\t".join([sampleID, "Cancer Type", cancerType]) + "\n").encode())
+            outFile.write(("\t".join([sampleID, "Cancer Type", cancerType]) + "\n"))
