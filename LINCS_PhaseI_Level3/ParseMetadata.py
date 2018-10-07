@@ -2,24 +2,26 @@ import numpy as np
 import sys, gzip
 import time
 
-instInfoFile = sys.argv[1]
+sigInfoFile = sys.argv[1]
 cellInfo = sys.argv[2]
 pertInfo = sys.argv[3]
 pertMetrics = sys.argv[4]
 metadataOut = sys.argv[5]
 
-def readIntoDict(filePath, startIndex):
+def readIntoDict(filePath, keyColumn, ignoreColumns):
     infoDict = {}
     with gzip.open(filePath) as f:
         headerList = f.readline().decode().rstrip('\n').split('\t')
+        keyIndex = headerList.index(keyColumn)
+        headerIndices = [i for i in range(len(headerList)) if headerList[i] not in ignoreColumns]
 
         for line in f:
             lineList = line.decode().rstrip('\n').split('\t')
-            sample = lineList[0]
+            sample = lineList[keyIndex]
 
             infoDict[sample] = {}
 
-            for i in range(1, len(lineList)):
+            for i in headerIndices:
                 variable = headerList[i]
                 value = checkMissing(lineList[i])
 
@@ -33,17 +35,17 @@ def checkMissing(value):
 
     return value
 
-cellInfoDict = readIntoDict(cellInfo, 1)
-pertInfoDict = readIntoDict(pertInfo, 3)
-pertMetricsDict = readIntoDict(pertMetrics, 3)
+cellInfoDict = readIntoDict(cellInfo, "cell_id", [])
+pertInfoDict = readIntoDict(pertInfo, "pert_id", ["pert_iname", "pert_type"])
+pertMetricsDict = readIntoDict(pertInfo, "pert_id", ["pert_iname", "pert_type"])
 
-with gzip.open(instInfoFile, 'r') as instInfo:
-    with open(metadataOut, 'w') as metaOut:
-        headerList = instInfo.readline().decode().rstrip('\n').split('\t')
+with gzip.open(sigInfoFile, 'r') as sigInfo:
+    with open(metadataOut, 'w', encoding="utf-8") as metaOut:
+        headerList = sigInfo.readline().decode().rstrip('\n').split('\t')
 
         metaOut.write("Sample\tVariable\tValue\n")
         index = 0
-        for row in instInfo:
+        for row in sigInfo:
             rowList = row.decode().strip('\n').split('\t')
 
             index = index + 1
@@ -67,17 +69,13 @@ with gzip.open(instInfoFile, 'r') as instInfo:
                 elif variable == "pert_id":
                     if value in pertInfoDict:
                         sampleDict.update(pertInfoDict[value])
-
                     if value in pertMetricsDict:
                         sampleDict.update(pertMetricsDict[value])
 
                     sampleDict[variable] = value
 
-                elif variable == "pert_time_unit":
-                    continue # All values are the same
-
                 else:
                     sampleDict[variable] = value
 
             for variable, value in sampleDict.items():
-                 metaOut.write("{}\t{}\t{}\n".format(sample, variable, value))
+                metaOut.write("{}\t{}\t{}\n".format(sample, variable, value))
