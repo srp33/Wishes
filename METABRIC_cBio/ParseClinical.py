@@ -6,7 +6,7 @@ outFilePath = sys.argv[3]
 
 #There are 5 header lines. We want to focus on the first one.
 with open(inFilePath, "r") as inFile:
-    with gzip.open(outFilePath, "w") as outFile:
+    with open(outFilePath, "w") as outFile:
         headerItems = inFile.readline().rstrip("\n").split("\t")
 
         ignoreIndices = []
@@ -26,7 +26,7 @@ with open(inFilePath, "r") as inFile:
         inFile.readline()
         inFile.readline()
 
-        outFile.write(("\t".join(headerItems) + "\n").encode())
+        outFile.write(("\t".join(headerItems) + "\n"))
 
         for line in inFile:
             lineItems = line.rstrip("\n").split("\t")
@@ -38,4 +38,4 @@ with open(inFilePath, "r") as inFile:
                     lineItems[i] = "NA"
 
             outLine = "\t".join(lineItems) + "\n"
-            outFile.write(outLine.encode())
+            outFile.write(outLine)
