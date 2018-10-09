@@ -34,8 +34,8 @@ with open(inFilePath, 'r') as inFile:
 uniqueCells = sorted(list(uniqueCells))
 
 # Create output file
-with gzip.open(outFilePath, 'a') as outFile:
+with open(outFilePath, 'a') as outFile:
 	for cell in uniqueCells:
 		for key in geneValues[cell]:
 			outText = "\t".join([cell,key,geneValues[cell][key]]) + "\n"
-			outFile.write(outText.encode())
+			outFile.write(outText)

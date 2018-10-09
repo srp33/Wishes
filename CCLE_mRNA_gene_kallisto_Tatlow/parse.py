@@ -71,7 +71,7 @@ with open(expressionData, 'r')  as inFile:
 
 print("writing metadata")
 metadataSamples = []
-with gzip.open(metedataOutFile, 'w') as ofMeta: 
+with open(metedataOutFile, 'w') as ofMeta: 
     with open(expressionData, 'r')  as inFile:
         first = True
         headerList = PrimaryNameToAnnotations["header"]
@@ -79,7 +79,7 @@ with gzip.open(metedataOutFile, 'w') as ofMeta:
             try:
                 if first :
                     first = False
-                    ofMeta.write(("Sample\tVariable\tValue\n").encode())
+                    ofMeta.write(("Sample\tVariable\tValue\n"))
                 else :
                     sample = PrimaryNameToAnnotations[expressionList[i][0]][0]
                     if sample in DrugDataDict :
@@ -89,26 +89,26 @@ with gzip.open(metedataOutFile, 'w') as ofMeta:
                                 ## We don't want blank vaulues or NA values.
                                 if list[k + 1] == "NA" or list[k + 1] == "" :
                                     continue
-                                ofMeta.write((sample + '\t' + "Drug__" + list[0] + "__" + DrugDataDict["Header"][k + 1] + '\t' + list[k + 1] + '\n').encode())
+                                ofMeta.write((sample + '\t' + "Drug__" + list[0] + "__" + DrugDataDict["Header"][k + 1] + '\t' + list[k + 1] + '\n'))
                                 ##Somtimes there are brand names. We want a duplicate with brand name info and gene info.
                                 if list[0] in genericToBrand :
                                     brand = genericToBrand[list[0]]
-                                    ofMeta.write((sample + '\t' + "Drug__" + brand + "__" + DrugDataDict["Header"][k + 1] + '\t' + list[k + 1] + '\n').encode())
+                                    ofMeta.write((sample + '\t' + "Drug__" + brand + "__" + DrugDataDict["Header"][k + 1] + '\t' + list[k + 1] + '\n'))
 #                    lineList = line.strip('\n').split('\t')
                     for j in range(len(PrimaryNameToAnnotations[expressionList[i][0]]) - 1) :
                         if PrimaryNameToAnnotations[expressionList[i][0]][j + 1] != "" :
                             metadataSamples.append(expressionList[i][0])
-                            ofMeta.write((PrimaryNameToAnnotations[expressionList[i][0]][0] + '\t' + headerList[j + 1] + '\t' + PrimaryNameToAnnotations[expressionList[i][0]][j + 1] + '\n').encode())
+                            ofMeta.write((PrimaryNameToAnnotations[expressionList[i][0]][0] + '\t' + headerList[j + 1] + '\t' + PrimaryNameToAnnotations[expressionList[i][0]][j + 1] + '\n'))
             except KeyError: 
                 continue #This will catch the following mismatches: RS4_11, EKVX, SF539, SNB75, SF268, MOLT-3, HOP-92, HOP-62, UO-31, WM983B, HOP-62, EKVX
 
 print("writing expression data")
-with gzip.open(dataOutFile, 'w') as ofData:
+with open(dataOutFile, 'w') as ofData:
     first = True
     for i in range(len(expressionList)) :
         if first :
             first = False
-            ofData.write(("Sample" + "\t" + "\t".join(expressionList[i][1:]) + "\n").encode())
+            ofData.write(("Sample" + "\t" + "\t".join(expressionList[i][1:]) + "\n"))
         else :
             if(any(str(expressionList[i][0]) == metadataSample for metadataSample in metadataSamples)) :
-                ofData.write((PrimaryNameToAnnotations[expressionList[i][0]][0] + "\t" + "\t".join([str(element) for element in expressionList[i][1:]]) + "\n").encode())
+                ofData.write((PrimaryNameToAnnotations[expressionList[i][0]][0] + "\t" + "\t".join([str(element) for element in expressionList[i][1:]]) + "\n"))

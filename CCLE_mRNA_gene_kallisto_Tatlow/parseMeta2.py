@@ -31,9 +31,9 @@ with open(inFilePath, 'r') as inFile:
 uniqueSamples = sorted(list(uniqueSamples))
 
 # Create output file
-with gzip.open(outFilePath, 'a') as outFile:
+with open(outFilePath, 'a') as outFile:
         for sample in uniqueSamples:
                 sampleHugoValues = tumorSamples[sample]
                 for value in sampleHugoValues:
                         outText = "\t".join([sample,"SomaticMutation",value]) + "\n"
-                        outFile.write(outText.encode())
+                        outFile.write(outText)
