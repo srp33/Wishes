@@ -26,9 +26,9 @@ dataFile.close()
 
 genes = sorted(list(genes))
 
-with gzip.open(outFilePath, "w") as outFile:
-    outFile.write(("\t".join(["Sample"] + genes) + "\n").encode())
+with open(outFilePath, "w") as outFile:
+    outFile.write(("\t".join(["Sample"] + genes) + "\n"))
 
     for sample in dataDict:
         sampleList = [sample] + [dataDict[sample][gene] for gene in genes]
-        outFile.write(("\t".join(sampleList) + "\n").encode())
+        outFile.write(("\t".join(sampleList) + "\n"))

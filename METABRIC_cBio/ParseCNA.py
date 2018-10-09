@@ -38,9 +38,9 @@ cnaFile.close()
 
 genes = sorted(list(genes))
 
-with gzip.open(outFilePath, "w") as outFile:
-    outFile.write(("\t".join(["Sample"] + genes) + "\n").encode())
+with open(outFilePath, "w") as outFile:
+    outFile.write(("\t".join(["Sample"] + genes) + "\n"))
 
     for sample in cnaDict:
         sampleList = [sample] + [cnaDict[sample][gene] for gene in genes]
-        outFile.write(("\t".join(sampleList) + "\n").encode())
+        outFile.write(("\t".join(sampleList) + "\n"))

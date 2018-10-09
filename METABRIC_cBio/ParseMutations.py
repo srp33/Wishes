@@ -37,7 +37,7 @@ def getSampleValue(dataDict, sample, gene, vc):
     return "No"
 
 for vc in vcs:
-    outFilePath = "Variant_{}.tsv.gz".format(vc)
+    outFilePath = "Variant_{}.tsv".format(vc)
 
     vcDict = {}
     vcGenes = set()
@@ -48,9 +48,9 @@ for vc in vcs:
 
     vcGenes = sorted(list(vcGenes))
 
-    with gzip.open(outFilePath, "w") as outFile:
-        outFile.write(("\t".join(["Sample"] + vcGenes) + "\n").encode())
+    with open(outFilePath, "w") as outFile:
+        outFile.write(("\t".join(["Sample"] + vcGenes) + "\n"))
 
         for sample in dataDict:
             sampleList = [sample] + [getSampleValue(dataDict, sample, gene, vc) for gene in vcGenes]
-            outFile.write(("\t".join(sampleList) + "\n").encode())
+            outFile.write(("\t".join(sampleList) + "\n"))
