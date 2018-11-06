@@ -7,8 +7,8 @@
 
 #Folders
 redirectedTemp=tmp
-inFiles=$redirectedTemp/inFiles
-outFiles=$redirectedTemp/outFiles
+inFiles=$redirectedTemp
+outFiles=$redirectedTemp
 
 #InFiles
 mutect=$inFiles/"TCGA.BRCA.mutect.c6a029e5-0ea3-410d-9e67-360bdfee2914.DR-7.0.somatic.maf.gz"
@@ -26,17 +26,15 @@ museOut=$outFiles/"TCGA.BRCA.muse.d9876b23-3e7d-4d7b-bc1b-3b4393cd2afb.DR-7.0.so
 somaticsniperOut=$outFiles/"TCGA.BRCA.somaticsniper.8b1474b5-0216-4dbc-bc21-e5c6fcb5600f.DR-7.0_adjusted.somatic.maf.gz"
 
 singleOut=$outFiles/condensed.maf
-dataOutFilegz=data.tsv
+dataOutFilegz=GDC.tsv
 metadataOutFilegz=metadata.tsv
-convertedMetaOut=Clinical.tsv.gz
 
 mkdir -p $outFiles
 
 python3 parse.py $mutect $varscan $muse $somaticsniper $mutectOut $varscanOut $museOut $somaticsniperOut
 python3 parse2.py $mutectOut $varscanOut $museOut $somaticsniperOut $singleOut
-python2 parse3.py $clinical $patientCancerType $expression $transposedTumorTPM $dataOutFilegz $metadataOutFilegz $singleOut 
+python parse3.py $clinical $patientCancerType $expression $transposedTumorTPM $dataOutFilegz $metadataOutFilegz $singleOut 
 
 gzip $dataOutFilegz
 gzip $metadataOutFilegz
 
-python3 convertTallFormatToWide.py "metadata.tsv.gz" $convertedMetaOut
